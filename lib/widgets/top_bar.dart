@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web/extensions/extensions.dart';
+import 'package:flutter_web/go_router/app_routes_constants.dart';
+import 'package:flutter_web/screens/second_screen.dart';
+import 'package:flutter_web/screens/third_screen.dart';
+import 'package:go_router/go_router.dart';
+
+import '../screens/first_screen/first_screen.dart';
+import '../screens/fourth_screen.dart';
 
 class TopBarContents extends StatefulWidget {
   final double opacity;
@@ -21,6 +29,8 @@ class _TopBarContentsState extends State<TopBarContents> {
     false
   ];
 
+  var firstScreenName="Riya Tyagi";
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -38,7 +48,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                 children: [
                   SizedBox(width: screenSize.width/5,),
                   const Text(
-                    'Author',
+                    'Explore',
                     style: TextStyle(
                       color: Color(0xFF077bd7),
                       fontSize: 26,
@@ -56,12 +66,20 @@ class _TopBarContentsState extends State<TopBarContents> {
                             : _isHovering[0] = false;
                       });
                     },
-                    onTap: () {},
+                    onTap: () {
+                      context.pushNamed(AppRouteNames.firstRouteName,queryParams:{
+                        'username':firstScreenName
+                      } ,
+                     /*     params: {
+                        'username':firstScreenName
+                      }*/
+                      );
+                    },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Home',
+                          'First',
                           style: TextStyle(
                               color: _isHovering[0]
                                   ? Color(0xFF077bd7)
@@ -94,12 +112,14 @@ class _TopBarContentsState extends State<TopBarContents> {
                             : _isHovering[1] = false;
                       });
                     },
-                    onTap: () {},
+                    onTap: () {
+                      GoRouter.of(context).pushNamed(AppRouteNames.secondRouteName,extra: UserData());
+                    },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'About',
+                          'Second',
                           style: TextStyle(
                               color: _isHovering[0]
                                   ? Color(0xFF077bd7)
@@ -132,12 +152,15 @@ class _TopBarContentsState extends State<TopBarContents> {
                             : _isHovering[2] = false;
                       });
                     },
-                    onTap: () {},
+                    onTap: () {
+                      GoRouter.of(context).pushNamed(AppRouteNames.thirdRouteName);
+
+                    },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'History',
+                          'Third',
                           style: TextStyle(
                               color: _isHovering[0]
                                   ? Color(0xFF077bd7)
@@ -170,21 +193,24 @@ class _TopBarContentsState extends State<TopBarContents> {
                             : _isHovering[3] = false;
                       });
                     },
-                    onTap: () {},
+                    onTap: () {
+                      GoRouter.of(context).pushNamed(AppRouteNames.fourthRouteName);
+
+                    },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Contact',
+                          'Fourth',
                           style: TextStyle(
                               color: _isHovering[0]
-                                  ? Color(0xFF077bd7)
-                                  : Color(0xFF077bd7),
+                                  ? const Color(0xFF077bd7)
+                                  : const Color(0xFF077bd7),
                               fontWeight: FontWeight.bold,
                               fontSize: 16
                           ),
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         Visibility(
                           maintainAnimation: true,
                           maintainState: true,
@@ -199,8 +225,6 @@ class _TopBarContentsState extends State<TopBarContents> {
                       ],
                     ),
                   ),
-
-
                 ],
               ),
             ),

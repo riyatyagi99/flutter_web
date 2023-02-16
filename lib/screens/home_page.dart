@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web/widgets/main_heading.dart';
 
+import '../widgets/bottom_bar.dart';
 import '../widgets/caraousel.dart';
 import '../widgets/featured_tiles.dart';
 import '../widgets/fetured_heading.dart';
@@ -70,7 +71,8 @@ class _HomePageState extends State<HomePage> {
                     FeaturedHeading(screenSize: screenSize),
                     FeaturedTiles(screenSize:screenSize),
                     MainHeading(screenSize: screenSize),
-                    MainCarousel()
+                    MainCarousel(),
+                    BottomBar()
                   ],
                 ),
 

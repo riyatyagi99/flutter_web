@@ -11,6 +11,7 @@ class MainCarousel extends StatefulWidget {
 }
 
 class _MainCarouselState extends State<MainCarousel> {
+  final String imagePath = 'assets/images/';
 
   final CarouselController _controller = CarouselController();
 
@@ -61,6 +62,7 @@ class _MainCarouselState extends State<MainCarousel> {
         CarouselSlider(
           items: imageSliders,
           options: CarouselOptions(
+            viewportFraction: 1,
               enlargeCenterPage: true,
               aspectRatio: 18 / 8,
              // autoPlay: true,
@@ -80,7 +82,7 @@ class _MainCarouselState extends State<MainCarousel> {
           carouselController: _controller,
         ),
         AspectRatio(
-          aspectRatio: 18 / 8,
+          aspectRatio: 20 / 8,
           child: Center(
             child: Text(
               places[_current],
@@ -93,7 +95,7 @@ class _MainCarouselState extends State<MainCarousel> {
             ),
           ),
         ),
-        AspectRatio(
+       screenSize.width<800?Container(): AspectRatio(
           aspectRatio: 17 / 8,
           child: Center(
             heightFactor: 1,
