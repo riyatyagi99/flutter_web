@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-
 import 'go_router/app_routes.dart';
 
 void main() {

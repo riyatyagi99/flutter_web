@@ -3,7 +3,7 @@ import 'package:flutter_web/extensions/extensions.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:timelines/timelines.dart';
 
-import '../../widgets/responsive.dart';
+import '../../common/responsive.dart';
 
 class EducationScreen extends StatefulWidget {
   const EducationScreen({Key? key}) : super(key: key);

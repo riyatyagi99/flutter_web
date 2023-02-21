@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web/extensions/extensions.dart';
 import 'package:flutter_web/screens/first_screen/first_screen.dart';
-import 'package:flutter_web/screens/fourth_screen.dart';
-import 'package:flutter_web/screens/second_screen.dart';
-import 'package:flutter_web/screens/third_screen.dart';
+import 'package:flutter_web/screens/fourth_screen/fourth_screen.dart';
+import 'package:flutter_web/screens/second_screen/second_screen.dart';
+import 'package:flutter_web/screens/third_screen/third_screen.dart';
 import 'package:go_router/go_router.dart';
 import '../../not_found_page.dart';
-import '../screens/home_page.dart';
+import '../home/home_page.dart';
 import 'app_routes_constants.dart';
 
 

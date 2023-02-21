@@ -1,11 +1,13 @@
 import 'package:animated_background/animated_background.dart';
 import 'package:animated_background/particles.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web/screens/first_screen/about.dart';
 import 'package:flutter_web/screens/first_screen/education.dart';
-import 'package:flutter_web/widgets/responsive.dart';
+import '../../common/platform_info.dart';
+import '../../common/responsive.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'dart:io';
 import 'extra.dart';
 
 class FirstScreen extends StatefulWidget {
@@ -61,9 +63,10 @@ class _FirstScreenState extends State<FirstScreen> with SingleTickerProviderStat
 
     return Scaffold(
       appBar: AppBar(
+        centerTitle: false,
         title: Text("Portfolio",style: GoogleFonts.lato(fontSize: 40,color: Colors.deepOrange),),
          actions: ResponsiveWidget.isSmallScreen(context)? null:navItems,
-        automaticallyImplyLeading: ResponsiveWidget.isSmallScreen(context)?true: false,
+        automaticallyImplyLeading: (ResponsiveWidget.isSmallScreen(context) ) ? true: false,
       ),
       drawer: ResponsiveWidget.isSmallScreen(context)?Drawer(
         backgroundColor: Colors.grey,

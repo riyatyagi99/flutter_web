@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../widgets/responsive.dart';
+
+import '../../common/responsive.dart';
 
 class Extra extends StatelessWidget {
   const Extra({Key? key}) : super(key: key);
