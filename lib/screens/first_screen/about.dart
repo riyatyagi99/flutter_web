@@ -4,7 +4,6 @@ import 'package:flutter_web/screens/first_screen/utils/animated_container.dart';
 import 'package:flutter_web/screens/first_screen/utils/animated_icon_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../common/responsive.dart';
 
 class AboutScreen extends StatefulWidget {

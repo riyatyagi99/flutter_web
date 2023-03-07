@@ -47,6 +47,11 @@ class _ThirdScreenState extends State<ThirdScreen> {
       appBar: AppBar(
         centerTitle: false,
         backgroundColor: Colors.black,
+        leading: InkWell(
+            onTap: (){
+              Navigator.pop(context);
+            },
+            child: Icon(Icons.arrow_back_ios_new,color: Colors.white,)),
         title: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -112,6 +117,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
           ],
         ),
         actions: const [NavActionItems()],
+
         automaticallyImplyLeading:
             (ResponsiveWidget.isSmallScreen(context)) ? true : false,
       ),

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 600px; width: 350px" >
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -32,23 +32,25 @@
   <title>flutter_web</title>
   <link rel="manifest" href="manifest.json">
 
-  <script>
+<!--  <script>
     // The value below is injected by flutter build, do not touch.
     var serviceWorkerVersion = null;
-  </script>
+  </script>-->
   <!-- This script adds the flutter initialization JS code
 
-
-   -->
   <script src="flutter.js" defer></script>
 
-<script defer src="main.dart.js" type="application/javascript"></script>
-<script defer src="third_screen.dart.js" type="application/javascript"></script>
+   -->
+
 
 
 </head>
 <body id="app-container">
-  <script>
+
+<script defer src="main.dart.js" type="application/javascript"></script>
+
+
+<!--  <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
@@ -61,6 +63,8 @@
         return appRunner.runApp();
       });
     });
-  </script>
+  </script>-->
+
+
 </body>
 </html>

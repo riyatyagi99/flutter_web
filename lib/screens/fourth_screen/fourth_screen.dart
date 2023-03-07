@@ -1,10 +1,8 @@
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import '../../common/platform_info.dart';
 import '../../common/responsive.dart';
-
 
 /*
 class FourthScreen extends StatefulWidget {
@@ -92,7 +90,7 @@ class _FourthScreenState extends State {
         setState(() {
           _showZoom["$index"] = false;
         });
-      }*//*
+      }*/ /*
 ,
       child: SizedBox(
         height: _showZoom["$index"] == true
@@ -109,7 +107,7 @@ class _FourthScreenState extends State {
 */
 
 class FourthScreen extends StatefulWidget {
-  const FourthScreen({Key? key,  this.title}) : super(key: key);
+  const FourthScreen({Key? key, this.title}) : super(key: key);
 
   final String? title;
 
@@ -133,16 +131,108 @@ class _FourthScreenState extends State {
     _controllerFront = ScrollController();
   }
 
+  GlobalKey menuKey = GlobalKey();
+
+  showMenus(BuildContext context) async {
+    final render = menuKey.currentContext!.findRenderObject() as RenderBox;
+    await showMenu(
+      context: context,
+      elevation: 0,
+      position: RelativeRect.fromLTRB(
+          render.localToGlobal(Offset.zero).dx,
+          render.localToGlobal(Offset.zero).dy + 80,
+          double.infinity,
+          double.infinity),
+      items: [
+        PopupMenuItem(
+          child: MouseRegion(
+            onExit: (e) {
+              Navigator.pop(context);
+            },
+            child: Column(
+              children: [
+                Text("Create a website"),
+                Text("Top Ms commericial management"),
+                Text("Mobile inventory application"),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  bool isHoveringOnMovie = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: (ResponsiveWidget.isSmallScreen(context) ) ? true: false,
+        automaticallyImplyLeading:
+            (ResponsiveWidget.isSmallScreen(context)) ? true : false,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Image.network("https://source.unsplash.com/random/1600x900?cars"),
+            ActionChip(
+
+                label: Text("Heyy Riyaaa!!")
+            ),
+            Stack(
+              children: [
+                Container(
+                  // key: menuKey,
+                  color: Colors.lightBlueAccent,
+              //    margin: const EdgeInsets.symmetric(vertical: 20),
+                  constraints: const BoxConstraints(
+                    minWidth: 100,
+                    minHeight: 50,
+                  ),
+                  child: MouseRegion(
+                    onHover: (hover) {
+                      setState(() {
+                        isHoveringOnMovie = true;
+                      });
+                    },
+                    onExit: (exit) {
+                      setState(() {
+                        isHoveringOnMovie = false;
+                      });
+                    },
+                    child: const Text('Check the popup'),
+                  ),
+                ),
+                isHoveringOnMovie
+                    ? Container(
+                        color: Colors.lightGreen[200],
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 20),
+                     margin: const EdgeInsets.only(
+                             top: 50),
+                        child: MouseRegion(
+                          onHover: (hover) {
+                            setState(() {
+                              isHoveringOnMovie = true;
+                            });
+                          },
+                          onExit: (exit) {
+                            setState(() {
+                              isHoveringOnMovie = false;
+                            });
+                          },
+                          child: Column(
+                            children: [
+                              Text("Create a website"),
+                              Text("Top Ms commercial management"),
+                              Text("Mobile inventory application"),
+                            ],
+                          ),
+                        ),
+                      )
+                    : SizedBox()
+              ],
+            ),
             Container(
               color: Colors.black87,
               child: Padding(
