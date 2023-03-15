@@ -5,6 +5,7 @@
 class AppRouteNames{
 
  static const String homeRouteName='home';
+ static const String userInputRouteName='userInput';
  static const String firstRouteName='first';
  static const String secondRouteName='second';
  static const String thirdRouteName='third';

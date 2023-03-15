@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:intl/intl.dart';
 
 
 
@@ -17,7 +18,6 @@ extension WidgetPaddingX on Widget {
 
 /*
 extension HoverExtensions on Widget {
-  // Get a regerence to the body of the view
   static final appContainer = html.window.document.getElementById('app-container');
 
   Widget get showCursorOnHover {
@@ -53,4 +53,13 @@ class UserData{
     data['userName'] = userName;
     return data;
   }
+}
+
+
+String getMonth(int currentMonthIndex) {
+  return DateFormat('MMM').format(DateTime(0, currentMonthIndex)).toString();
+}
+
+String month(DateTime? dateTime) {
+  return DateFormat.MMM().format(dateTime!.toLocal()).toUpperCase(); // this format - May 10,2022
 }

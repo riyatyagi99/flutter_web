@@ -8,6 +8,7 @@ import 'package:flutter_web/screens/third_screen/third_screen.dart';
 import 'package:go_router/go_router.dart';
 import '../../not_found_page.dart';
 import '../home/home_page.dart';
+import '../screens/user_input.dart';
 import 'app_routes_constants.dart';
 
 
@@ -19,10 +20,17 @@ class MyAppRouters{
       routes: <GoRoute>[
         GoRoute(
           path: '/',
-          name: AppRouteNames.homeRouteName,
+          name: AppRouteNames.userInputRouteName,
           builder: (BuildContext context, GoRouterState state) {
-            return const HomePage();
+            return const UserInput();
           },
+        ),
+        GoRoute(
+            path: '/home',
+            name: AppRouteNames.homeRouteName,
+            builder: (BuildContext context, GoRouterState state) {
+              return  HomePage(workMode: state.queryParams['workMode'],);
+            }
         ),
         GoRoute(
             path: '/first',
