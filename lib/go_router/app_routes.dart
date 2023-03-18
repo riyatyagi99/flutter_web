@@ -22,7 +22,7 @@ class MyAppRouters{
           path: '/',
           name: AppRouteNames.userInputRouteName,
           builder: (BuildContext context, GoRouterState state) {
-            return const UserInput();
+            return  UserInput();
           },
         ),
         GoRoute(

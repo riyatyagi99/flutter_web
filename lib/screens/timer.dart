@@ -12,9 +12,9 @@ class TimerPageState extends State<TimerPage> {
   Timer? timer;
   int seconds = 0;
   bool isPaused = true;
-  var timerrr = BackgroundTimer((counter) {
+/*  var timerrr = BackgroundTimer((counter) {
     print('Counter: $counter');
-  });
+  });*/
 
   @override
   void initState() {
@@ -59,16 +59,16 @@ class TimerPageState extends State<TimerPage> {
         ElevatedButton(
           child: isPaused ? Icon(Icons.play_arrow):Icon(Icons.pause),
           onPressed: () {
-            timerrr.start();
+           // timerrr.start();
 
             setState(() {
               isPaused = !isPaused;
             });
-           /* if (isPaused) {
+            if (isPaused) {
               pauseTimer();
             } else {
               startTimer();
-            }*/
+            }
           },
         ),
       ],

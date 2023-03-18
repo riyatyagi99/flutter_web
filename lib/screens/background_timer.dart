@@ -1,3 +1,4 @@
+/*
 import 'dart:html';
 
 class BackgroundTimer {
@@ -24,4 +25,5 @@ class BackgroundTimer {
   }
 }
 
+*/
 

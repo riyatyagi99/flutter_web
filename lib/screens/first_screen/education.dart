@@ -46,10 +46,10 @@ class _EducationScreenState extends State<EducationScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           index==0? textContent("2014","Completed 10th","10th grade from VidyaGyan School,"
-                              " with 90% of marks were secured by me"):index==1?
+                              " with 95% of marks were secured by me"):index==1?
                           textContent("2016","Completed 12th","12th grade from VidyaGyan School,"
-                              " with 95% of marks were secured by me"):index==2?
-                          textContent("2016-2020","BTech(IT)","Completed my BTech from COER college, Roorkee. Frankly writing, was the worst college"):
+                              " with 89% of marks were secured by me"):index==2?
+                          textContent("2016-2020","BTech(IT)","Completed my BTech from COER college, Roorkee. Frankly writing, was the worst college one could ever go in"):
                        textContent("2021-2023","Mobcoder Company","Working in Flutter with good colleagues and mentor"),
 
                         ],

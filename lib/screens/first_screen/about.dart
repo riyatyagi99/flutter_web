@@ -34,7 +34,11 @@ class _AboutScreenState extends State<AboutScreen> {
         children: [
           Image.asset('assets/images/developer.jpeg'),
           Text("Riya Tyagi",style: GoogleFonts.lato(fontSize: 20),),
-          Text("Working in Flutter and looking for change in NCR area",style:GoogleFonts.actor(fontSize: 18),),
+
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20.0),
+            child: Text("Working in Flutter and looking for change in NCR area",style:GoogleFonts.actor(fontSize: 18),),
+          ),
           Wrap(
             runAlignment: WrapAlignment.center,
             alignment: WrapAlignment.center,

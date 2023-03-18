@@ -192,10 +192,10 @@ class Extra extends StatelessWidget {
                       "UP,Indian",
                     ),
                     labelStyle: TextStyle(
-                      color: Colors.cyan,
+                      color: Colors.red,
                     ),
                     side: BorderSide(
-                      color: Colors.black,
+                      color: Colors.red,
                     ),
                     backgroundColor: Colors.white,
                   ),
@@ -204,10 +204,10 @@ class Extra extends StatelessWidget {
                       "English, Hindi",
                     ),
                     labelStyle: TextStyle(
-                      color: Colors.cyan,
+                      color: Colors.red,
                     ),
                     side: BorderSide(
-                      color: Colors.black,
+                      color: Colors.red,
                     ),
                     backgroundColor: Colors.white,
                   ),
@@ -216,10 +216,10 @@ class Extra extends StatelessWidget {
                       "Bs Hogya",
                     ),
                     labelStyle: TextStyle(
-                      color: Colors.cyan,
+                      color: Colors.red,
                     ),
                     side: BorderSide(
-                      color: Colors.black,
+                      color: Colors.red,
                     ),
                     backgroundColor: Colors.white,
                   ),
