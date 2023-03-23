@@ -1,8 +1,29 @@
 import 'package:flutter/material.dart';
 import 'go_router/app_routes.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'dart:io';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp(
+      options: const FirebaseOptions(
+          apiKey: "AIzaSyBL5GcaTpUofIMri3ZQvX0h31p3ac6lMo8",
+          appId: "1:1007693805542:web:70edda53c2be3302014827",
+          messagingSenderId: "flutterweb-b599d",
+          projectId: "1007693805542")
+  );
+ /* if(Platform.isIOS || Platform.isAndroid){
+    print("Nothing");
+  }else{
+    Firebase.initializeApp(
+        options: const FirebaseOptions(
+            apiKey: "AIzaSyBL5GcaTpUofIMri3ZQvX0h31p3ac6lMo8",
+            appId: "1:1007693805542:web:70edda53c2be3302014827",
+            messagingSenderId: "flutterweb-b599d",
+            projectId: "1007693805542")
+    );
+  }
+*/
   runApp(const MyApp());
 
 }

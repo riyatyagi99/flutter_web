@@ -129,7 +129,7 @@ class _FirstScreenState extends State<FirstScreen> with TickerProviderStateMixin
                 height: size.height/5,
                 child: Marquee(
                   text: 'Trying to make animation where I can show the moving text and change its direction on the basis of scroll',
-                  style:  TextStyle(fontSize:30,color: Colors.white, ),
+                  style:  TextStyle(fontSize:30,color:_isScrollingDown? Colors.grey: Colors.white, ),
                   scrollAxis: Axis.horizontal,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   blankSpace: 20.0,
