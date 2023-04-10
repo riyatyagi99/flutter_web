@@ -232,10 +232,12 @@ class _UserInputState extends State<UserInput> {
               children: [
                 ElevatedButton(
                     onPressed: ()async {
-                      // if(Platform.isIOS || Platform.isAndroid){
-                      //   print("Nothing");
-                      // }else{
-                        UserCredential?  userCredential= await signInEmailPassword(email.text.toString(),password.text.toString());
+                      GoRouter.of(context).pushNamed(
+                        AppRouteNames.homeRouteName,
+                        queryParams: {'workMode': userInput.text},
+                      );
+
+                      /*  UserCredential?  userCredential= await signInEmailPassword(email.text.toString(),password.text.toString());
                         if(userCredential!=null){
                           GoRouter.of(context).pushNamed(
                             AppRouteNames.homeRouteName,
@@ -248,8 +250,8 @@ class _UserInputState extends State<UserInput> {
                             timeInSecForIosWeb: 2,
                           );
                           print("Credentials are not correct");
-                        }
-                     // }
+                        }*/
+
 
                     },
                     child: const Text("Submit")),
