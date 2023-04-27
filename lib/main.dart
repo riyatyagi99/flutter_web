@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'go_router/app_routes.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -12,9 +13,8 @@ void main() async{
           messagingSenderId: "flutterweb-b599d",
           projectId: "1007693805542")
   );
- /* if(Platform.isIOS || Platform.isAndroid){
-    print("Nothing");
-  }else{
+
+   if(kIsWeb){
     Firebase.initializeApp(
         options: const FirebaseOptions(
             apiKey: "AIzaSyBL5GcaTpUofIMri3ZQvX0h31p3ac6lMo8",
@@ -22,8 +22,9 @@ void main() async{
             messagingSenderId: "flutterweb-b599d",
             projectId: "1007693805542")
     );
+  }else{
+    print("Nothing============");
   }
-*/
   runApp(const MyApp());
 
 }
